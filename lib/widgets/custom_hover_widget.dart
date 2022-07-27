@@ -31,12 +31,10 @@ class CustomOnHoverContainer extends GetView {
               Obx(
                 () => Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      color: !controller.isHovered.value
-                          ? null
-                          : const Color(0xff17479D),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      color: !controller.isHovered.value ? null : Const.kBlue,
                       image: DecorationImage(
-                          image: const AssetImage("assets/pics/map.jpg"),
+                          image: const AssetImage(Const.map),
                           opacity: controller.isHovered.value ? 0.5 : 1)),
                 ),
               ),
@@ -46,14 +44,14 @@ class CustomOnHoverContainer extends GetView {
                     visible: controller.isHovered.value ? true : false,
                     child: ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              const Color(0xffFFFFFF))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Const.mapButton)),
                       onPressed: () {
                         Get.to(() => const MapPage());
                       },
                       child: const Text(
-                        "Show Property Location",
-                        style: TextStyle(color: Color(0xff17479D)),
+                        Const.propertyLocation,
+                        style: TextStyle(color: Const.kBlue),
                       ),
                     ),
                   ),

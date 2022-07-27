@@ -31,7 +31,7 @@ class HomePage extends GetView {
                 margin: const EdgeInsets.only(left: 20),
                 child: const Text("Istanbul / Sariyer")),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Container(
               alignment: Alignment.topLeft,
@@ -50,34 +50,31 @@ class HomePage extends GetView {
                   // color: Colors.blueGrey,
                   height: 550,
                   width: 700,
-                  margin: const EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(left: 60),
                   child: Stack(
                     children: [
-                      Container(
-                        // color: Colors.orange,
-                        child: CarouselSlider(
-                          carouselController: controller.mainCarouselController,
-                          items: [
-                            customSlide(
-                              "assets/pics/pic1.jpg",
-                            ),
-                            customSlide(
-                              "assets/pics/pic2.jpg",
-                            ),
-                            customSlide(
-                              "assets/pics/pic3.jpg",
-                            ),
-                            customSlide(
-                              "assets/pics/pic4.jpg",
-                            ),
-                          ],
-                          options: CarouselOptions(
-                            autoPlay: false,
-                            scrollPhysics: const NeverScrollableScrollPhysics(),
-                            viewportFraction: 1,
-                            enlargeCenterPage: true,
-                            enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                      CarouselSlider(
+                        carouselController: controller.mainCarouselController,
+                        items: [
+                          customSlide(
+                            Const.pic1,
                           ),
+                          customSlide(
+                            Const.pic2,
+                          ),
+                          customSlide(
+                            Const.pic3,
+                          ),
+                          customSlide(
+                            Const.pic4,
+                          ),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: false,
+                          scrollPhysics: const NeverScrollableScrollPhysics(),
+                          viewportFraction: 1,
+                          enlargeCenterPage: true,
+                          enlargeStrategy: CenterPageEnlargeStrategy.scale,
                         ),
                       ),
                       Container(
@@ -93,9 +90,16 @@ class HomePage extends GetView {
                                       controller.mainCarouselController
                                           .previousPage();
                                     },
-                                    icon: const Icon(Icons.arrow_back)),
+                                    icon: const Icon(
+                                      Icons.arrow_back_ios_rounded,
+                                      color: Const.kBlue,
+                                    )),
                                 margin:
                                     const EdgeInsets.only(top: 250, right: 50),
+                                decoration: const BoxDecoration(
+                                    color: Const.cardWhite,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15))),
                               ),
                               Container(
                                 margin: const EdgeInsets.only(top: 250),
@@ -122,8 +126,15 @@ class HomePage extends GetView {
                                     controller.mainCarouselController
                                         .nextPage();
                                   },
-                                  icon: const Icon(Icons.arrow_forward),
+                                  icon: const Icon(
+                                    Icons.arrow_forward_ios_rounded,
+                                    color: Const.kBlue,
+                                  ),
                                 ),
+                                decoration: const BoxDecoration(
+                                    color: Const.cardWhite,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15))),
                                 margin:
                                     const EdgeInsets.only(top: 250, left: 50),
                               ),
@@ -135,16 +146,16 @@ class HomePage extends GetView {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 100, left: 200),
+                  margin: const EdgeInsets.only(bottom: 100, left: 350),
                   child: Column(
                     children: [
                       Container(
-                        color: const Color(0xffF5F5F5),
+                        color: Const.cardWhite,
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Row(
                           children: [
                             Image.asset(
-                              "assets/pics/bill.jpg",
+                              Const.bill,
                               height: 200,
                               width: 200,
                             ),
@@ -276,7 +287,7 @@ class HomePage extends GetView {
                               onPressed: () {},
                               child: const Text(
                                 "Send Call Request",
-                                style: const TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white),
                               ),
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
@@ -286,7 +297,7 @@ class HomePage extends GetView {
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25.0),
                                     side: const BorderSide(
-                                      color: const Color(0xff17479D),
+                                      color: Color(0xff17479D),
                                     ),
                                   ),
                                 ),
@@ -343,11 +354,11 @@ class HomePage extends GetView {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Container(
-              margin: EdgeInsets.only(left: 45),
+              margin: const EdgeInsets.only(left: 45),
               child: Row(
                 children: [
                   Container(
@@ -365,7 +376,7 @@ class HomePage extends GetView {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -378,11 +389,11 @@ class HomePage extends GetView {
                   width: 150,
                   padding: const EdgeInsets.all(30),
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Column(
                     children: [
-                      SvgPicture.asset("assets/icons/apartment.svg"),
+                      SvgPicture.asset(Const.apartment),
                       const SizedBox(
                         height: 5,
                       ),
@@ -412,11 +423,11 @@ class HomePage extends GetView {
                   width: 150,
                   padding: const EdgeInsets.all(30),
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Column(
                     children: [
-                      SvgPicture.asset("assets/icons/floor.svg"),
+                      SvgPicture.asset(Const.floor),
                       const SizedBox(
                         height: 5,
                       ),
@@ -446,11 +457,11 @@ class HomePage extends GetView {
                   width: 150,
                   padding: const EdgeInsets.all(30),
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Column(
                     children: [
-                      SvgPicture.asset("assets/icons/bedroom.svg"),
+                      SvgPicture.asset(Const.bedroom),
                       const SizedBox(
                         height: 5,
                       ),
@@ -477,14 +488,14 @@ class HomePage extends GetView {
                 ),
                 Container(
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   padding: const EdgeInsets.all(23),
                   height: 150,
                   width: 150,
                   child: Column(
                     children: [
-                      SvgPicture.asset("assets/icons/bathroom.svg"),
+                      SvgPicture.asset(Const.bathroom),
                       const SizedBox(
                         height: 5,
                       ),
@@ -513,12 +524,12 @@ class HomePage extends GetView {
                   height: 150,
                   width: 150,
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   padding: const EdgeInsets.all(30),
                   child: Column(
                     children: [
-                      SvgPicture.asset("assets/icons/size.svg"),
+                      SvgPicture.asset(Const.size),
                       const SizedBox(
                         height: 5,
                       ),
@@ -553,7 +564,7 @@ class HomePage extends GetView {
                   margin: const EdgeInsets.only(left: 40, right: 300),
                   alignment: Alignment.bottomLeft,
                   decoration: const BoxDecoration(
-                      color: Color(0xffF5F5F5),
+                      color: Const.cardWhite,
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
